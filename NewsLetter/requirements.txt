@@ -1,0 +1,3 @@
+google-genai
+prefect
+prefect[docker]
