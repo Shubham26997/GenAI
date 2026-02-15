@@ -1,15 +1,15 @@
 def get_master_prompt(core_problem, tech_compare, app_context):
-    """Generate the master prompt with specified timeframe.
-    
-    Args:
-        core_problem (str): Reducing latency for frequently accessed API responses
-        tech_compare (str): Redis vs In-memory cache
-        app_context (str): High-traffic backend service    
-    Returns:
-        str: The formatted master prompt
-    """
-    
-    return f"""
+   """Generate the master prompt with specified timeframe.
+   
+   Args:
+         core_problem (str): Reducing latency for frequently accessed API responses
+         tech_compare (str): Redis vs In-memory cache
+         app_context (str): High-traffic backend service    
+   Returns:
+      str: The formatted master prompt
+   """
+   
+   return f"""
 You are a Senior Software Architect and Principal Engineer with 15+ years of experience in distributed systems, cloud infrastructure, and low-latency applications.
 
 Your objective is to write a high-signal LinkedIn post that provides immediate, non-trivial technical value. Your goal is for every reader to walk away having learned a specific architectural pattern or production mechanic.

@@ -1,11 +1,13 @@
 import os
 import re
 import json
+from dotenv import load_dotenv
 from generate_mails import save_as_json
 from generate_html import save_as_html
 from generate_news import generate
 from delivery_email import send_newsletter_email
 
+load_dotenv()
 if __name__ == "__main__":
     time_frame = int(os.getenv("TIME_FRAME", "7"))
     load_from_cache = os.getenv("LOAD_FROM_CACHE", "false").lower() == "true"

@@ -9,7 +9,6 @@ def get_linkedin_person_id(access_token):
     headers = {
         "Authorization": f"Bearer {access_token}",
     }
-    
     # Try the OIDC UserInfo endpoint (matches your scopes)
     url = "https://api.linkedin.com/v2/userinfo"
     
@@ -34,9 +33,6 @@ def get_linkedin_person_id(access_token):
         if hasattr(e, 'response') and e.response:
             print(f"API Response: {e.response.text}")
         return None
-
-    print("\nHELP: Since you have 'openid' and 'profile' scopes, ensure your token was")
-    print("generated with 'w_member_social' AND 'openid' AND 'profile'.")
     return None
 
 if __name__ == "__main__":
