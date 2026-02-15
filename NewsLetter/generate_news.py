@@ -12,7 +12,7 @@ def generate(timeframe_days=7):
         str: Generated news content
     """
     client = genai.Client(
-        api_key="AIzaSyBHPLjYeyZxl0TJUoRJamjzcXebTcH_CK0",
+        api_key="",
     )
 
     model = "gemini-2.5-flash"
