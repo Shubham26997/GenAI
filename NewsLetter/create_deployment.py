@@ -49,8 +49,10 @@ def deploy_newsletter():
             "load_from_cache": False,
             "recipient_emails": env_recipients
         },
-        cron="0 9 * * 0", # Every Sunday at 9 AM
-        timezone="Asia/Kolkata"
+        schedule=prefect.schedules.Cron(
+            "0 9 * * 0",  # Every Sunday at 9 AM
+            timezone="Asia/Kolkata"
+        )
     )
 
     # 2. Define the Manual/One-time Deployment
@@ -62,8 +64,7 @@ def deploy_newsletter():
             "time_frame": 7,
             "load_from_cache": False,
             "recipient_emails": env_recipients
-        },
-        timezone="Asia/Kolkata"
+        }
     )
 
     # 3. Serve both concurrently

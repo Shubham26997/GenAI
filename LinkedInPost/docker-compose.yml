@@ -1,0 +1,69 @@
+services:
+  # Newsletter Application (Prefect Worker)
+  application:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      # Worker MUST use internal service name 'server'
+      - PREFECT_API_URL=http://server:4200/api
+      - RECIPIENT_EMAIL=shubhamgoel386@gmail.com
+    command: python create_deployment.py
+    depends_on:
+      db:
+        condition: service_healthy
+      server:
+        condition: service_healthy
+    networks:
+      - newletter-networks
+
+  # Database for Prefect metadata
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=prefect
+      - POSTGRES_PASSWORD=prefect
+      - POSTGRES_DB=prefect
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U prefect"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - prefect_db_data:/var/lib/postgresql/data
+    networks:
+      - newletter-networks
+
+  # Prefect Server (API + UI)
+  server:
+    image: prefecthq/prefect:3-latest
+    restart: always
+    command: prefect server start
+    ports:
+      - "4200:4200"
+    environment:
+      # UI MUST use 'localhost' because it runs in YOUR browser
+      - PREFECT_API_URL=http://localhost:4200/api
+      - PREFECT_SERVER_API_HOST=0.0.0.0
+      - PREFECT_SERVER_DATABASE_CONNECTION_URL=postgresql+asyncpg://prefect:prefect@db:5432/prefect
+    healthcheck:
+      # Internal healthcheck uses localhost
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:4200/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - newletter-networks
+
+volumes:
+  prefect_db_data:
+
+networks:
+  newletter-networks:
+    driver: bridge
