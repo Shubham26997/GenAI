@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from generate_post import generate
 from linkedin_poster import post_to_social
 from get_my_id import get_linkedin_person_id
-from models import PromptPara
+
 load_dotenv()
 LINKEDIN_ACCESS_TOKEN = os.getenv("LINKEDIN_ACCESS_TOKEN")
 
@@ -24,9 +24,8 @@ async def post_to_linkedin(core_problem: str, tech_compare: str, app_context: st
         app_context=app_context,
         is_technical=is_technical
     )
-    # my_person_id = get_linkedin_person_id(LINKEDIN_ACCESS_TOKEN)
-    # result = post_to_social(content_linkedin, LINKEDIN_ACCESS_TOKEN, my_person_id)
-    # print(result)
-    print(content_linkedin)
-    return "Post created on LinkedIN"
+    my_person_id = get_linkedin_person_id(LINKEDIN_ACCESS_TOKEN)
+    result = post_to_social(content_linkedin, LINKEDIN_ACCESS_TOKEN, my_person_id)
+    print(result)
     # print(content_linkedin)
+    return "Post created on LinkedIN"
