@@ -1,5 +1,4 @@
 import requests
-from constant import LINKEDIN_ACCESS_TOKEN
 
 def get_linkedin_person_id(access_token):
     """
@@ -34,9 +33,3 @@ def get_linkedin_person_id(access_token):
             print(f"API Response: {e.response.text}")
         return None
     return None
-
-if __name__ == "__main__":
-    if LINKEDIN_ACCESS_TOKEN and LINKEDIN_ACCESS_TOKEN != "YOUR_LINKEDIN_ACCESS_TOKEN":
-        get_linkedin_person_id(LINKEDIN_ACCESS_TOKEN)
-    else:
-        print("Error: Missing valid LINKEDIN_ACCESS_TOKEN in constant.py")

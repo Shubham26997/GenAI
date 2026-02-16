@@ -1,15 +1,20 @@
+import os
 from google import genai
 from google.genai import types
-from constant import GEMINI_KEY
+from dotenv import load_dotenv
 from prompt import get_master_prompt
+load_dotenv()
+GEMINI_KEY = os.getenv("GEMINI_KEY", "")
+# print(GEMINI_KEY)
 
-def generate(core_problem, tech_compare, app_context):
+def generate(core_problem, tech_compare, app_context, is_technical=False):
     """Generate LinkedIn content using Gemini API with streaming.
     
     Args:
         core_problem (str): Main core problem of linked in post
         tech_compare (str): Two techs which will get compare in the post
         app_context (str): Application context overall based on the post is created
+        is_technical (bool): If True, focus on technical benchmarks.
     Returns:
         str: Generated post content
     """
@@ -20,7 +25,7 @@ def generate(core_problem, tech_compare, app_context):
     model = "gemini-2.5-flash"
     
     # Get the master prompt with the specified timeframe
-    prompt = get_master_prompt(core_problem, tech_compare, app_context)
+    prompt = get_master_prompt(core_problem, tech_compare, app_context, is_technical)
     
     contents = [
         types.Content(

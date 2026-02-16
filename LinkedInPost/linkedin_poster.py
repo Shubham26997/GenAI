@@ -1,7 +1,7 @@
 import requests
 import json
 
-def post_to_linkedin(content, access_token, author_id):
+def post_to_social(content, access_token, author_id):
     """
     Posts a text share to LinkedIn using the UGC (User Generated Content) API.
     

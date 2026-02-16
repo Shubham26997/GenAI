@@ -2,3 +2,5 @@ google-genai
 requests
 prefect
 python-dotenv
+fastapi[standard]
+uvicorn
