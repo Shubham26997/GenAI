@@ -4,7 +4,6 @@ __pycache__/
 *.json
 .git/
 .DS_Store
-.env
 .gemini/
 .agent/
 brain/

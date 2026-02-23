@@ -5,170 +5,301 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
-    <title>AI & Tech News Brief</title>
+    <title>🚀 AI &amp; Tech News Brief</title>
     <style>
         :root {
             color-scheme: light dark;
             supported-color-schemes: light dark;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             -webkit-text-size-adjust: none;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #667eea;
+            background-color: ;
             background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0;
             padding: 40px 20px;
             color: #1a1a1a;
-            line-height: 1.7;
+            line-height: 1.75;
         }
-        
+
         .container {
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto;
             background-color: #ffffff;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
         }
-        
-        .header {
+
+        /* ── Header ── */
+        .email-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 36px 40px 28px;
             text-align: center;
-            border-bottom: 2px solid #e2e8f0;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
         }
-        
-        h1 {
-            color: #4a5568;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
+        .email-header h1 {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
         }
-        
         .subtitle {
-            color: #718096;
-            font-size: 14px;
+            color: rgba(255,255,255,0.82);
+            font-size: 13px;
+            letter-spacing: 0.3px;
         }
-        
+
+        /* ── Content area ── */
         .content {
-            font-size: 16px;
+            padding: 32px 40px;
+            font-size: 15px;
             color: #2d3748;
         }
-        
-        h2 {
-            font-size: 20px;
-            color: #2d3748;
-            margin-top: 30px;
-            margin-bottom: 12px;
-            padding-left: 15px;
-            border-left: 4px solid #667eea;
-        }
-        
+
+        /* AI SUMMARY / RADAR banner */
         h3 {
-            font-size: 18px;
-            color: #059669;
-            background-color: #ecfdf5;
-            padding: 15px;
-            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            background: #667eea;
+            padding: 10px 18px;
+            border-radius: 6px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        
-        ul {
-            margin: 15px 0;
-            padding-left: 20px;
+
+        /* Summary intro paragraph right after h3 */
+        h3 + p {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 14px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: #3a4660;
+            margin-bottom: 28px;
         }
-        
-        li {
-            margin-bottom: 10px;
-        }
-        
-        strong {
+
+        /* News item headline */
+        h2 {
+            font-size: 17px;
+            font-weight: 700;
             color: #1a202c;
-            background-color: #fff9db;
-            padding: 0 4px;
+            margin-top: 32px;
+            margin-bottom: 0;
+            padding: 18px 20px 12px;
+            background: #f8faff;
+            border-top: 3px solid #667eea;
+            border-radius: 10px 10px 0 0;
         }
-        
+
+        /* Card body: wraps everything between two h2s */
+        h2 ~ p,
+        h2 ~ ul,
+        h2 ~ p.label,
+        h2 ~ p.source {
+            background: #f8faff;
+            padding: 0 20px;
+        }
+
+        /* Last element in a card gets bottom rounding */
+        h2 ~ *:last-child {
+            border-radius: 0 0 10px 10px;
+            padding-bottom: 18px;
+        }
+
+        /* Field labels: Overview, Developer Relevance etc. */
+        p.label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 14px;
+            margin-bottom: 2px;
+            padding: 0 20px;
+            background: #f8faff;
+            display: block;
+        }
+
+        /* Regular paragraphs inside cards */
+        p {
+            margin: 4px 0 10px;
+            line-height: 1.75;
+        }
+
+        /* Source lines */
+        p.source {
+            font-size: 12px;
+            color: #718096;
+            font-style: italic;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 12px;
+            padding-top: 10px;
+        }
+
+        /* Bullet lists */
+        ul {
+            margin: 10px 0 10px 0;
+            padding-left: 24px;
+            background: #f8faff;
+        }
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        /* ── Footer ── */
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            color: #718096;
+            padding: 20px 40px 28px;
+            border-top: 1px solid #e8edf5;
+            color: #a0aec0;
             font-size: 12px;
         }
 
-        /* DARK MODE - STANDARD */
+        /* ── DARK MODE ── */
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #000000 !important;
+                background-color: #0f0f12 !important;
                 background-image: none !important;
             }
             .container {
-                background-color: #1a1a1a !important;
-                color: #ffffff !important;
-                border: 1px solid #333333 !important;
+                background-color: #1a1a2e !important;
+                border: 1px solid #2d2d44 !important;
             }
-            h1, h2, .content, li, strong {
-                color: #ffffff !important;
-            }
-            .subtitle, .footer {
-                color: #a0aec0 !important;
+            .email-header {
+                opacity: 0.95;
             }
             .content {
-                background-color: #1a1a1a !important;
+                color: #e2e8f0 !important;
+                background-color: #1a1a2e !important;
             }
-            h3 {
-                background-color: #064e3b !important;
-                color: #34d399 !important;
+            h2 {
+                color: #f0f4ff !important;
+                background: #12122a !important;
+            }
+            /* Card body: all paragraph blocks and lists inside card area */
+            p.card-p, p.label, p.source, ul, li {
+                background: #12122a !important;
+                color: #cbd5e0 !important;
+            }
+            /* Summary intro block after h3 */
+            h3 + p.card-p {
+                background: #1e1e38 !important;
+                color: #a0b4d0 !important;
+                border-left-color: #667eea !important;
+            }
+            /* Ensure label accent color stays visible */
+            p.label {
+                color: #667eea !important;
+                opacity: 0.9;
+            }
+            p.source {
+                color: #718096 !important;
+                border-top-color: #2d2d44 !important;
             }
             strong {
-                background-color: #2d3748 !important;
+                color: #e2e8f0 !important;
+            }
+            .footer {
+                color: #4a5568 !important;
+                border-top-color: #2d2d44 !important;
+                background-color: #1a1a2e !important;
             }
         }
 
-        /* GMAIL DARK MODE HACKS */
-        [data-ogsc] body, [data-ogsb] body { background-color: #000000 !important; }
-        [data-ogsc] .container, [data-ogsb] .container { background-color: #1a1a1a !important; }
-        [data-ogsc] h1, [data-ogsb] h1, [data-ogsc] h2, [data-ogsb] h2, [data-ogsc] .content, [data-ogsb] .content, [data-ogsc] li, [data-ogsb] li { color: #ffffff !important; }
+        /* Gmail dark mode overrides */
+        [data-ogsc] .container, [data-ogsb] .container { background-color: #1a1a2e !important; }
+        [data-ogsc] .content, [data-ogsb] .content { color: #e2e8f0 !important; background-color: #1a1a2e !important; }
+        [data-ogsc] h2, [data-ogsb] h2 { color: #f0f4ff !important; background: #12122a !important; }
+        [data-ogsc] p.card-p, [data-ogsb] p.card-p { color: #cbd5e0 !important; background: #12122a !important; }
+        [data-ogsc] li, [data-ogsb] li { color: #cbd5e0 !important; background: #12122a !important; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🚀 AI & Tech News Brief</h1>
-            <p class="subtitle">Your curated digest of the latest developments</p>
+        <div class="email-header">
+            <h1>🚀 AI &amp; Tech News Brief</h1>
+            <p class="subtitle">Your curated digest of the latest developer-relevant AI developments</p>
         </div>
         <div class="content">
             <h3>AI SUMMARY</h3>
-The past week witnessed significant advancements in AI model capabilities, emphasizing longer context windows, enhanced agentic functions, and cost-efficiency, alongside major strategic investments by Big Tech in AI infrastructure and expanded platform integrations.<br><br><h2>Anthropic Claude Opus 4.6 Unveiled with 1 Million Token Context Window</h2><br><strong>Overview:</strong>
-Anthropic officially released Claude Opus 4.6, a new flagship AI model optimized for complex, long-horizon agentic tasks. A key feature is its industry-first 1-million-token context window for its smartest model tier, allowing it to process and reason over extremely large amounts of information. The model also boasts enhanced task planning and multi-agent collaboration capabilities, enabling parallel workflows across various tools and coding tasks. Early enterprise testers, including Replit and Asana, have reportedly utilized its advanced features for complex research and development.<br><strong>Impact & Implications:</strong>
-This massive context window fundamentally expands the scope of problems AI can tackle, particularly for developers working on large codebases, extensive document analysis, or multi-step, autonomous workflows. The agentic capabilities, combined with the extended context, mean developers can build more sophisticated and reliable AI agents that can manage and execute complex projects with less human oversight. From a business perspective, this can drive significant productivity gains in areas like R&D, legal review, and content creation, pushing the frontier of AI's practical application in enterprise settings.<br><br><h2>MiniMax Launches M2.5 Models Offering Cost-Efficient, Near State-of-the-Art Performance</h2><br><strong>Overview:</strong>
-Chinese startup MiniMax introduced its new language models, M2.5 and M2.5 Lightning, claiming near state-of-the-art performance at a fraction of the cost of leading models like Claude Opus 4.6. These models leverage a Mixture of Experts (MoE) architecture, activating only the necessary parameters for each task to achieve dramatic cost savings. MiniMax reports competitive benchmarks in coding and agentic tool-use, suggesting enterprises could operate multiple autonomous agents continuously for significantly lower annual costs.<br><strong>Impact & Implications:</strong>
-The advent of highly cost-efficient, high-performing AI models like MiniMax M2.5 marks a significant shift, democratizing access to advanced AI capabilities. For developers and companies, this reduces the barrier to entry for deploying sophisticated AI agents, particularly for small and medium-sized enterprises (SMEs) or applications requiring numerous concurrent agents. This trend can accelerate innovation by allowing more experimentation and production deployments in cost-sensitive environments, fostering a more diverse AI ecosystem beyond a few leading models and potentially fueling the development of specialized AI solutions.<br><br><h2>OpenAI Enhances Agentic Coding with GPT-5.3-Codex and Ultra-Fast Spark Model</h2><br><strong>Overview:</strong>
-OpenAI continued to advance its agentic coding capabilities with the introduction of GPT-5.3-Codex, designed as its most capable agentic coding model to date. This model combines frontier coding performance with enhanced reasoning and professional knowledge, offering a 25% speed improvement over previous iterations. Further extending these capabilities, OpenAI also released GPT-5.3-Codex-Spark on February 13, 2026, a smaller, ultra-fast coding model optimized for real-time use within the Codex environment, capable of generating over 1,000 tokens per second on low-latency hardware.<br><strong>Impact & Implications:</strong>
-These releases significantly empower developers by providing more capable and faster AI assistance for coding tasks, from complex problem-solving to real-time code generation and debugging. GPT-5.3-Codex's improved reasoning enables it to handle long-running tasks involving research and tool use, while the Spark model's speed is crucial for interactive development and rapid prototyping. This push towards advanced agentic coding fosters higher developer productivity and could accelerate software development cycles, potentially shifting how software is conceived, written, and maintained.<br><br><h2>OpenAI Introduces Frontier Platform for Enterprise AI Agent Management</h2><br><strong>Overview:</strong>
-OpenAI launched "Frontier," a new platform specifically designed for enterprises to deploy and manage AI agents. This platform aims to facilitate the integration of AI agents as "AI coworkers" within existing enterprise tech stacks. Frontier connects to systems like CRMs and ticketing tools, allowing agents to access context across a business without requiring extensive migrations. It also incorporates built-in evaluation and feedback loops, enabling agents to learn and improve through experience while operating within defined boundaries and permissions.<br><strong>Impact & Implications:</strong>
-The Frontier platform addresses a critical challenge in enterprise AI adoption: the secure and governed deployment of autonomous agents. For businesses, it provides a structured framework to leverage AI for automating complex workflows, improving efficiency, and reducing operational costs. Developers gain a standardized environment to build, monitor, and scale enterprise-grade AI agents, complete with tools for integration, performance management, and safety. This move signals a maturing market for AI agents beyond conversational interfaces, focusing on their practical, integrated roles within business operations.<br><br><h2>Big Tech Forecasts $650 Billion Investment in AI Infrastructure for 2026</h2><br><strong>Overview:</strong>
-Four major U.S. technology companies – Alphabet (Google), Amazon, Meta, and Microsoft – have collectively forecasted capital expenditures totaling approximately $650 billion in 2026 for AI infrastructure. This unprecedented spending spree is primarily earmarked for new data centers, advanced AI chips, and networking equipment, signaling an intense pursuit of dominance in the nascent artificial intelligence market. This projected outlay represents a significant increase, with individual companies' 2026 budgets expected to rival or exceed their spending over the past three years combined.<br><strong>Impact & Implications:</strong>
-This colossal investment underscores Big Tech's conviction that AI is the foundational technology for the next economic cycle, driving a global data center construction boom. For developers, this translates to a future with access to more powerful and readily available cloud AI services and infrastructure. Businesses can anticipate accelerated innovation in AI capabilities, but also potential market consolidation as these giants build formidable moats. The sheer scale of investment raises questions about market sustainability, energy demands, and the potential for a "winner-take-all" scenario in the AI landscape.<br><br><h2>Apple CarPlay to Support Third-Party AI Integration</h2><br><strong>Overview:</strong>
-Reports indicate that Apple is preparing to allow the integration of third-party AI models, such as ChatGPT, Claude, and Gemini, directly into its CarPlay platform. While Siri will maintain its role as the primary voice system for core car functions, this development will enable drivers to utilize external "World Knowledge" AI bots for hands-free reasoning and complex tasks, such as detailed travel planning or document analysis, while on the road.<br><strong>Impact & Implications:</strong>
-This move signifies a significant opening of Apple's tightly controlled ecosystem, extending the reach of advanced AI capabilities into the automotive domain. For developers, it creates new opportunities to build and integrate AI-powered services within the CarPlay environment, potentially transforming in-car experiences and creating new avenues for productivity and entertainment. From a business perspective, it reflects a strategic recognition by Apple of the growing importance of diverse AI integrations, potentially driving innovation in connected car services and increasing the value proposition of CarPlay for consumers.<br><br><h2>Key Takeaways</h2><ul><li><strong>AI Models are Deepening & Diversifying:</strong> The focus is shifting towards more capable agentic models with expanded context windows (Claude Opus 4.6) and highly specialized, cost-effective alternatives (MiniMax M2.5), alongside faster coding-specific models (GPT-5.3-Codex-Spark). This indicates a move towards AI that can handle longer, more complex, and more varied tasks.</li>
-<li><strong>Enterprise AI Agent Management is Maturing:</strong> The launch of platforms like OpenAI Frontier highlights the growing need for robust tools to deploy, manage, and govern AI agents within business environments, indicating a transition from experimental AI to production-grade autonomous workflows.</li>
-<li><strong>Unprecedented Capital Investment:</strong> Big Tech's projected $650 billion spending on AI infrastructure signals a fierce race for AI dominance, which will lead to a significant increase in available compute resources and advanced cloud AI services, while also raising questions about market concentration and sustainability.</li>
-<li><strong>Platform Integration is Expanding:</strong> Key platforms like Apple CarPlay are opening up to third-party AI, suggesting a broader trend of AI capabilities becoming deeply embedded across various devices and ecosystems, creating new opportunities for developers and enriching user experiences.</li></ul>
+<p class="card-p">Recent advancements for developers focus on enhancing agentic AI systems through new SDKs for agent interoperability, platforms for AI-driven application generation, and enterprise-grade gateways for governing AI model and agent deployments.</p>
+<h2>Rivet Sandbox Agent SDK</h2>
+<p class="label">Overview</p>
+<p class="card-p">Rivet has released the Sandbox Agent SDK, a new toolkit designed to standardize how developers interact with various coding agent runtimes. This SDK provides a universal HTTP API for controlling diverse agents, such as Claude Code, Codex, OpenCode, and Amp, within isolated sandbox environments, aiming to resolve issues related to API fragmentation and transient state management.</p>
+<p class="label">What's Fundamentally New</p>
+<p class="card-p">The SDK introduces a universal HTTP API that abstracts the proprietary interfaces of multiple coding agents, allowing developers to integrate agents once and swap them via configuration. It functions as a server within a sandbox, enabling remote control of agents and providing necessary isolation for executing arbitrary code, differentiating it from traditional SDKs that often require local execution.</p>
+<p class="label">Developer Relevance</p>
+<p class="card-p">This SDK is crucial for developers building robust agentic systems, as it eliminates the need to rewrite integrations for each agent runtime and addresses security concerns related to local code execution. By offering standardized APIs and secure sandbox execution, it simplifies complex agent orchestration, accelerating the development and deployment of AI-powered coding workflows.</p>
+<p class="label">Example Usage</p>
+<p class="card-p">The SDK operates as a server inside a sandbox, exposing an HTTP API. Developers interact with this API from their applications to manage agents. For instance, to execute a command:</p>
+<p class="card-p">(No public usage example provided.)</p>
+<p class="label">Impact & Implications</p>
+<p class="card-p">The Rivet Sandbox Agent SDK is expected to reduce friction in integrating and adopting diverse AI coding agents into development workflows. Its consistent interface and secure execution environment promise to lead to more reliable, maintainable, and scalable agent-powered software development, allowing engineers to concentrate on higher-level logic.</p>
+<p class="label">Source</p>
+<ul>
+  <li>[PRIMARY] InfoQ: Rivet Launches the Sandbox Agent SDK to Solve Agent API Fragmentation (February 23, 2026).</li>
+  <li>[SECONDARY] GitHub: rivet-dev/sandbox-agent repository.</li>
+</ul>
+<h2>WaveMaker Agentic Application Generation System</h2>
+<p class="label">Overview</p>
+<p class="card-p">WaveMaker has launched a new agentic application generation system, specifically designed for enterprise teams to accelerate the development of design-led, long-lived web and mobile applications. This system operates as a hybrid Integrated Developer Environment (IDE), combining agentic prompts with a visual canvas and a code editor.</p>
+<p class="label">What's Fundamentally New</p>
+<p class="card-p">The system employs a "two-pass code generation methodology" that enforces an architecture-first approach to automate developer tasks using AI agents. It generates production-ready, open-standards code from inputs such as Figma design files, prompts, and APIs. This methodology aims to reduce inconsistencies and hallucinations often seen in AI-generated code while keeping developers in control of the process.</p>
+<p class="label">Developer Relevance</p>
+<p class="card-p">This platform is highly relevant for enterprise developers aiming to leverage generative AI for faster application delivery while ensuring predictable quality and controlled costs. It streamlines the entire design-to-development workflow by converting UX designs into functional application markup, facilitating rapid prototyping and reducing manual effort for architectural integrity and design system adherence.</p>
+<p class="label">Example Usage</p>
+<p class="card-p">Developers feed Figma design files or natural language prompts into the hybrid IDE. The system then generates stack-agnostic application markup for UI components, layouts, API bindings, and backend services. Developers can visually validate and refine the generated applications within the Studio, utilizing seamless switching between visual, prompt, and code editor modes.</p>
+<p class="label">Impact & Implications</p>
+<p class="card-p">This system has the potential to significantly reduce development cycles and costs for enterprise applications by automating much of the initial coding and embedding architectural best practices from the start. It enables developers to focus on core business logic and innovation, as the system handles the generation of maintainable, enterprise-grade code for frameworks like Angular, React, and React Native.</p>
+<p class="label">Source</p>
+<ul>
+  <li>[PRIMARY] GlobeNewswire: WaveMaker Fuses Design and Development with Architecture-first Agentic Application Generation System for Enterprise Dev Teams (February 19, 2026).</li>
+  <li>[PRIMARY] WaveMaker Blog: WaveMaker Enters the Agentic Universe (February 18, 2026).</li>
+  <li>[SECONDARY] Devdiscourse: WaveMaker Unveils Cutting-Edge Agentic Application Generation System (February 20, 2026).</li>
+</ul>
+<h2>Databricks AI Gateway (Beta) (Extended Window)</h2>
+<p class="label">Overview</p>
+<p class="card-p">Databricks has released its AI Gateway in Beta, positioning it as an enterprise control plane for governing Large Language Model (LLM) endpoints and coding agents. This centralized service provides functionality to analyze usage, configure permissions, manage capacity, and log LLM traffic across various providers and models.</p>
+<p class="label">What's Fundamentally New</p>
+<p class="card-p">The AI Gateway introduces advanced features for enterprise AI workload management, including a rich user interface, enhanced observability, and expanded API coverage. Key capabilities include rate limiting and intelligent traffic routing across multiple providers for improved reliability and load balancing. It enables organizations to seamlessly switch LLM providers and models without modifying code.</p>
+<p class="label">Developer Relevance</p>
+<p class="card-p">For developers and platform engineers, the AI Gateway streamlines the operationalization of LLM-powered applications and coding agents. It ensures consistent governance, security, and cost management across diverse AI deployments, thereby reducing the complexity of integrating and managing multiple AI models and services. This ultimately accelerates the development of production-ready agentic systems and generative AI applications.</p>
+<p class="label">Example Usage</p>
+<p class="card-p">Developers can establish and configure AI Gateway endpoints for their LLMs and coding agents, then interact with these endpoints using standard APIs, such as the OpenAI client. The gateway manages the underlying routing, permissions, and logging. For example, an application can call a single AI Gateway endpoint, and the gateway intelligently routes the request to the most suitable LLM based on predefined policies.</p>
+<p class="label">Impact & Implications</p>
+<p class="card-p">The Databricks AI Gateway serves as a critical infrastructure component for enterprises scaling their AI initiatives. It facilitates robust governance, cost control, and performance optimization for LLM and agentic workflows, boosting confidence in deploying AI applications within sensitive or high-demand environments. This platform aids in the transition from experimental AI pilots to stable, production-grade systems.</p>
+<p class="label">Source</p>
+<ul>
+  <li>[PRIMARY] Databricks on AWS: February 2026 Release Notes (February 12, 2026).</li>
+  <li>[PRIMARY] Azure Databricks | Microsoft Learn: AI Gateway (Beta) (February 12, 2026, and updated Feb 20, 2026).</li>
+  <li>[SECONDARY] Databricks Blog: What's New in AI/BI - February 2026 Roundup (February 11, 2026).</li>
+</ul>
+<h2>DEVELOPER TAKEAWAYS</h2>
+<ul>
+  <li><strong>Rivet Sandbox Agent SDK</strong>: Investigate this SDK for unifying agentic workflows when integrating multiple coding agents, particularly for secure execution in sandbox environments and abstracting diverse agent APIs.</li>
+  <li><strong>WaveMaker Agentic Application Generation System</strong>: Consider evaluating this platform if your enterprise requires accelerating application development with AI, emphasizing an architecture-first approach for design-led, maintainable code generation.</li>
+  <li><strong>Databricks AI Gateway (Beta)</strong>: Assess this solution for centralized control, governance, and monitoring of LLM endpoints and AI agents, especially for scaling AI applications in an enterprise setting that demands reliability and cost management.</li>
+</ul>
         </div>
         <div class="footer">
-            <p>Powered by AI News Engine</p>
-            <p>&copy; Shubham Newsletter</p>
+            <p>Powered by AI News Engine &nbsp;|&nbsp; &copy; Shubham Newsletter</p>
         </div>
     </div>
 </body>

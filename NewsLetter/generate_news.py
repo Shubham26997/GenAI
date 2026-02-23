@@ -1,4 +1,5 @@
 import os
+from datetime import datetime, timedelta, timezone
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
@@ -24,7 +25,16 @@ def generate(timeframe_days=7):
     
     # Get the master prompt with the specified timeframe
     prompt = get_master_prompt(timeframe_days)
-    
+
+    now = datetime.now(timezone.utc)
+
+    time_range_start = (now - timedelta(days=timeframe_days)).replace(microsecond=0)
+    time_range_end = (now + timedelta(days=1)).replace(microsecond=0)
+
+    time_range = types.Interval(
+        start_time=time_range_start,
+        end_time=time_range_end
+        )
     contents = [
         types.Content(
             role="user",
@@ -35,6 +45,7 @@ def generate(timeframe_days=7):
     ]
     tools = [
         types.Tool(googleSearch=types.GoogleSearch(
+            time_range_filter=time_range
         )),
     ]
     generate_content_config = types.GenerateContentConfig(

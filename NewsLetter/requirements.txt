@@ -2,3 +2,4 @@ google-genai
 prefect
 prefect[docker]
 python-dotenv
+premailer

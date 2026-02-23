@@ -3,8 +3,33 @@ import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+try:
+    from premailer import transform as css_inline
+    PREMAILER_AVAILABLE = True
+except ImportError:
+    PREMAILER_AVAILABLE = False
+
+def _inline_css(html_content):
+    """Convert <style> block CSS to inline styles for Gmail compatibility."""
+    if PREMAILER_AVAILABLE:
+        try:
+            return css_inline(
+                html_content,
+                remove_classes=False,
+                strip_important=False,
+                cssutils_logging_level=None,
+            )
+        except Exception as e:
+            print(f"⚠️  CSS inlining failed ({e}), sending as-is.")
+    else:
+        print("⚠️  premailer not installed — CSS may not render in Gmail. Run: pip install premailer")
+    return html_content
+
 def send_newsletter_email(html_content, recipient_emails):
     """Sends the HTML newsletter via SMTP to one or multiple recipients."""
+    # Inline CSS so Gmail (which strips <style> blocks) renders styles correctly
+    html_content = _inline_css(html_content)
+
     # SMTP Configuration
     smtp_server = os.getenv("SMTP_SERVER", "smtp.gmail.com")
     smtp_port = int(os.getenv("SMTP_PORT", "587"))
