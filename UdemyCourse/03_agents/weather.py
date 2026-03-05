@@ -1,4 +1,5 @@
 import requests
+import os
 
 OPEN_METEO_GEOCODE_API = "https://geocoding-api.open-meteo.com/v1/search"
 OPEN_METEO_FORECAST_API = "https://api.open-meteo.com/v1/forecast"
@@ -167,3 +168,7 @@ def get_weather(city: str, country: str | None = None, *, timeout_s: int = 15) -
         return "Not able to fetch the weather of requested city"
     except (KeyError, TypeError, ValueError):
         return "Weather API returned an unexpected response"
+
+
+def run_cmd(cmd: str):
+    return os.system(cmd)

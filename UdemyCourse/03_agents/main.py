@@ -1,15 +1,16 @@
 import json
 from openai import OpenAI
 from dotenv import load_dotenv
-
+from model import PromptOutput
 from system_prompt import SYSTEM_PROMPT
-from weather import get_weather
+from weather import get_weather, run_cmd
 
 load_dotenv()
 client = OpenAI()
 
 AVAILABLE_TOOLS = {
-    "get_weather": get_weather
+    "get_weather": get_weather,
+    "run_cmd": run_cmd
 }
 
 def main():
@@ -32,22 +33,23 @@ def main():
             }
         ]
         while True:        
-            response = client.chat.completions.create(
-                model = "gpt-4o-mini",
-                response_format = {"type": "json_object"},
+            response = client.chat.completions.parse(
+                model = "gpt-4o",
+                response_format = PromptOutput,
                 messages=message_chat
             )
             # print(response.choices[0].message.content)
-            msg_resp = json.loads(response.choices[0].message.content)
+            # msg_resp = json.loads(response.choices[0].message.content)
             # print(type(msg_resp))
-            if msg_resp.get("step") == "OUTPUT":
-                print(f"🤖: {msg_resp.get("content")}")
+            msg_resp = response.choices[0].message.parsed
+            if msg_resp.step == "OUTPUT":
+                print(f"🤖: {msg_resp.content}")
                 break
-            if msg_resp.get("step") != "TOOL":
-                print(f"🧠: {msg_resp.get("content")}") 
-            if msg_resp.get("step") == "TOOL":
-                tool_name = msg_resp.get('tool')
-                tool_param = msg_resp.get('input')
+            if msg_resp.step != "TOOL":
+                print(f"🧠: {msg_resp.content}") 
+            if msg_resp.step == "TOOL":
+                tool_name = msg_resp.tool
+                tool_param = msg_resp.input
                 tool_resp = AVAILABLE_TOOLS[tool_name](tool_param)
                 print(f"🛠️: {tool_name}{tool_param}=>{tool_resp}")
                 message_chat.append(
@@ -64,7 +66,7 @@ def main():
                 continue
             message_chat.append({
                 "role": "assistant",
-                "content": json.dumps(msg_resp)
+                "content": json.dumps(response.choices[0].message.content)
             })
 
 if __name__ == "__main__":

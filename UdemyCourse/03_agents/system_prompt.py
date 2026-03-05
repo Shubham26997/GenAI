@@ -8,6 +8,7 @@ SYSTEM_PROMPT = """
 
     Availabe Tools:
         - get_weather(city: str, country: str | None = None, *, timeout_s: int = 15): Takes city name as an input and country may also be passed but by default you can use India as a default value for country and returns weather of that city from that country
+        - run_cmd(cmd:str): This tool can execute any linux command on the current os
     RULES:
         - Strictly follow the given JSON output format
         - Always execute one step at a time
