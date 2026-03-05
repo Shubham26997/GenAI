@@ -30,7 +30,7 @@ def deploy_newsletter():
     
     # 0. Wait for API availability
     # We use a longer timeout and better retry logic
-    api_url = os.getenv("PREFECT_API_URL", "http://server:4200/api")
+    api_url = os.getenv("PREFECT_API_URL", "http://localhost:4200/api")
     if not wait_for_prefect_api(api_url):
         print("⚠️ Proceeding despite API timeout (Prefect might still be starting)...")
     
