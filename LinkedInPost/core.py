@@ -16,7 +16,7 @@ async def home():
     return "Welcome to Fastapi"
 
 @app.post("/post_linkedin/")
-async def post_to_linkedin(core_problem: str, tech_compare: str, app_context: str, is_technical: bool=False):
+async def post_to_linkedin(core_problem: str, tech_compare: str, app_context: str, is_technical: bool=False, post_publish: bool=True):
     print("Hi Linked IN we are here to explore")
     content_linkedin = generate(
         core_problem=core_problem,
@@ -24,8 +24,9 @@ async def post_to_linkedin(core_problem: str, tech_compare: str, app_context: st
         app_context=app_context,
         is_technical=is_technical
     )
-    my_person_id = get_linkedin_person_id(LINKEDIN_ACCESS_TOKEN)
-    result = post_to_social(content_linkedin, LINKEDIN_ACCESS_TOKEN, my_person_id)
-    print(result)
+    if post_publish:
+        my_person_id = get_linkedin_person_id(LINKEDIN_ACCESS_TOKEN)
+        result = post_to_social(content_linkedin, LINKEDIN_ACCESS_TOKEN, my_person_id)
+    print(result) if post_publish else print(content_linkedin)
     # print(content_linkedin)
     return "Post created on LinkedIN"
