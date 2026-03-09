@@ -13,4 +13,5 @@ langchain-text-splitters
 langchain-qdrant
 
 fastapi[standard]
+aiofiles
 uvicorn

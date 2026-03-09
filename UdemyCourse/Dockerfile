@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "02_openai/sample_hit.py" ]
+CMD [ "python", "my_agents/main.py" ]

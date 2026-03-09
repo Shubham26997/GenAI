@@ -18,6 +18,10 @@ services:
       - 6333:6333
     networks:
       - udemy_network
+    volumes:
+      - vector_db:/qdrant/storage
 
 networks:
   udemy_network:
+volumes:
+  vector_db:
