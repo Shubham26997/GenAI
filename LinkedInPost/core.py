@@ -27,6 +27,7 @@ async def post_to_linkedin(core_problem: str, tech_compare: str, app_context: st
     if post_publish:
         my_person_id = get_linkedin_person_id(LINKEDIN_ACCESS_TOKEN)
         result = post_to_social(content_linkedin, LINKEDIN_ACCESS_TOKEN, my_person_id)
-    print(result) if post_publish else print(content_linkedin)
-    # print(content_linkedin)
-    return "Post created on LinkedIN"
+        print(result)
+        return "Post created on LinkedIN"
+    else:
+        return content_linkedin
