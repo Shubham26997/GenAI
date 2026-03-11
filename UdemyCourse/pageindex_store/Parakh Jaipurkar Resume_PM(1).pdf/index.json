@@ -1,0 +1,79 @@
+{
+  "doc_name": "document.pdf",
+  "structure": [
+    {
+      "title": "SUMMARY",
+      "start_index": 1,
+      "end_index": 1,
+      "node_id": "0000",
+      "summary": "The partial document outlines the professional profile of Parakh Jaipurkar, a Product Manager with over 4 years of experience in data-driven product development, compliance automation, and B2B SaaS. It highlights expertise in translating business goals into actionable product strategies through collaboration with engineering, data science, and compliance teams. Key skills include product management, data analytics (SQL, KPI tracking, A/B analysis), agile delivery, risk and compliance workflows, and fintech knowledge. The document also emphasizes proficiency in tools like Jira, Confluence, Figma, and Tableau, along with exposure to quantitative finance concepts such as portfolio optimization and risk modeling. The experience section details achievements at Masters India, including leading product lifecycles, optimizing compliance platforms, enhancing fraud detection workflows, and driving a 40% increase in platform adoption through GTM strategies and stakeholder communication."
+    },
+    {
+      "title": "SKILLS",
+      "start_index": 1,
+      "end_index": 1,
+      "node_id": "0001",
+      "summary": "The partial document outlines the professional profile of Parakh Jaipurkar, a Product Manager with over 4 years of experience in data-driven product development, compliance automation, and B2B SaaS. It highlights expertise in translating business goals into data-backed strategies through collaboration with engineering, data science, and compliance teams. Key skills include product management, data analytics, agile delivery, risk and compliance workflows, and fintech knowledge. Proficiency in tools like SQL, Python, Jira, and Tableau is noted, along with exposure to quantitative finance concepts such as portfolio optimization and risk modeling. The document also details current experience at Masters India, where responsibilities include leading product lifecycles, KPI tracking, fraud detection, UAT management, and driving platform adoption through compliance tools."
+    },
+    {
+      "title": "EXPERIENCE",
+      "start_index": 1,
+      "end_index": 1,
+      "nodes": [
+        {
+          "title": "MASTERS INDIA REMOTE/ MUMBAI, INDIA Product Manager Jan 2023 to Present",
+          "start_index": 1,
+          "end_index": 1,
+          "node_id": "0003",
+          "summary": "The partial document outlines the profile of Parakh Jaipurkar, a Product Manager with over 4 years of experience in data-driven product development, compliance automation, and B2B SaaS. It highlights expertise in translating business goals into data-backed strategies through collaboration with engineering, data science, and compliance teams. Key skills include product management, data analytics, agile delivery, risk and compliance, and fintech, with proficiency in tools like SQL, Jira, Confluence, and Tableau. The document also emphasizes experience in regulatory workflows, fraud detection, and compliance automation, along with a strong foundation in quantitative finance concepts. Current responsibilities include leading product lifecycles, KPI tracking, UAT management, and driving platform adoption through GTM strategies."
+        },
+        {
+          "title": "THINK & LEARN PVT. LTD. (BYJU’S) BENGALURU, INDIA Associate Product Content Mar 2022 to Jan 2023",
+          "start_index": 2,
+          "end_index": 2,
+          "node_id": "0004",
+          "summary": "The partial document outlines professional experience, education, and certifications. It highlights roles at BYJU'S as an Associate Product Content professional, focusing on designing interactive learning content, collaborating on product prototypes, and analyzing user retention metrics. At Pokarna Engineered Stone Ltd., the individual worked as an Assistant Product Manager Trainee, conducting data analytics, optimizing production processes, and implementing cost-saving measures. The education section mentions a BE in Chemical Engineering from BITS, Goa. Certifications include a Certificate in Quantitative Finance (CQF) Level-1 and a Product Management Fellowship from Upraised."
+        },
+        {
+          "title": "POKARNA ENGINEERED STONE LTD. VISHAKHAPATNAM, INDIA Assistant Product Manager Trainee Jan 2021 to Jun 2021",
+          "start_index": 2,
+          "end_index": 2,
+          "node_id": "0005",
+          "summary": "The partial document outlines professional experience, education, and certifications. It highlights roles at BYJU'S as an Associate Product Content professional, focusing on designing interactive learning content, collaborating on product prototypes, and analyzing user retention metrics. At Pokarna Engineered Stone Ltd., the individual worked as an Assistant Product Manager Trainee, conducting data analytics, optimizing production processes, and improving waste management. Educational qualifications include a BE in Chemical Engineering from BITS, Goa. Certifications include a Certificate in Quantitative Finance (CQF) Level-1 and a Product Management Fellowship from Upraised."
+        }
+      ],
+      "node_id": "0002",
+      "summary": "The partial document outlines the professional profile of Parakh Jaipurkar, a Product Manager with over 4 years of experience in data-driven product development, compliance automation, and B2B SaaS. It highlights expertise in product lifecycle management, risk intelligence, regulatory technology, and financial products, with proficiency in tools like SQL, Jira, Confluence, and Tableau. The document emphasizes skills in business analysis, data analytics, agile delivery, and compliance workflows, along with exposure to quantitative finance concepts like portfolio optimization and risk modeling. It also details Parakh's current role at Masters India, where responsibilities include leading product lifecycles, KPI tracking, fraud detection, workflow automation, and increasing platform adoption through compliance tools. The document also notes ongoing pursuit of the Certificate in Quantitative Finance (CQF) to enhance expertise in risk management and predictive analytics."
+    },
+    {
+      "title": "EDUCATION",
+      "start_index": 2,
+      "end_index": 2,
+      "node_id": "0006",
+      "summary": "The partial document outlines professional experience, education, and certifications. It highlights roles at BYJU'S as an Associate Product Content professional, focusing on designing interactive learning content, collaborating on product prototypes, and analyzing user retention metrics. At Pokarna Engineered Stone Ltd., the individual worked as an Assistant Product Manager Trainee, conducting data analytics, optimizing production processes, and improving waste management. Educational qualifications include a BE in Chemical Engineering from BITS, Goa. Certifications include a Certificate in Quantitative Finance (CQF) Level-1 and a Product Management Fellowship from Upraised."
+    },
+    {
+      "title": "CERTIFICATIONS",
+      "start_index": 2,
+      "end_index": 2,
+      "nodes": [
+        {
+          "title": "CERTIFICATE IN QUANTITATIVE FINANCE (CQF) LEVEL-1 Fitch Learning Jul 2025 to Oct 2025",
+          "start_index": 2,
+          "end_index": 2,
+          "node_id": "0008",
+          "summary": "The partial document outlines professional experience, education, and certifications. It highlights roles at BYJU'S as an Associate Product Content professional, focusing on designing interactive learning content, collaborating on product prototypes, and analyzing user retention metrics. At Pokarna Engineered Stone Ltd., the individual worked as an Assistant Product Manager Trainee, conducting data analytics, optimizing production processes, and improving waste management. Educational qualifications include a BE in Chemical Engineering from BITS Goa. Certifications include a Certificate in Quantitative Finance (CQF) Level-1 and a Product Management Fellowship from Upraised."
+        },
+        {
+          "title": "PRODUCT MANAGEMENT FELLOWSHIP Upraised Aug 2022 to Dec 2022",
+          "start_index": 2,
+          "end_index": 2,
+          "node_id": "0009",
+          "summary": "The partial document outlines professional experience, education, and certifications. It highlights roles at BYJU'S as an Associate Product Content professional, focusing on designing interactive learning content, collaborating on product prototypes, and analyzing user retention metrics. At Pokarna Engineered Stone Ltd., the individual worked as an Assistant Product Manager Trainee, conducting data analytics, optimizing production processes, and improving waste management. Educational qualifications include a BE in Chemical Engineering from BITS, Goa. Certifications include a Certificate in Quantitative Finance (CQF) Level-1 and a Product Management Fellowship from Upraised."
+        }
+      ],
+      "node_id": "0007",
+      "summary": "The partial document outlines professional experience, education, and certifications. It highlights roles at BYJU'S as an Associate Product Content professional, focusing on designing interactive learning content, collaborating on product prototypes, and analyzing user retention metrics. At Pokarna Engineered Stone Ltd., the individual worked as an Assistant Product Manager Trainee, conducting data analytics, optimizing production processes, and implementing cost-saving measures. Educational qualifications include a BE in Chemical Engineering from BITS, Goa. Certifications include a Certificate in Quantitative Finance (CQF) Level-1 and a Product Management Fellowship from Upraised."
+    }
+  ]
+}

@@ -51,8 +51,20 @@ services:
     networks:
       - infra_network
 
+
+  qdrant:
+    image: qdrant/qdrant
+    container_name: qdrant_db
+    ports:
+      - "6333:6333"
+    volumes:
+      - vector_db:/qdrant/storage
+    networks:
+      - infra_network
+
 volumes:
   postgres_data:
+  vector_db:
 
 networks:
   infra_network:
