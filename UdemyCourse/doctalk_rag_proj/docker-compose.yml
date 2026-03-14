@@ -1,0 +1,37 @@
+services:
+
+  application:
+    build: .
+    container_name: "udemy_ai"
+    command: uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - VECTOR_DB_URL=http://qdrant_db:6333
+    ports:
+      - "8002:8000"
+    networks:
+      - infra_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: "udemy_ai_frontend"
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8002
+    ports:
+      - "3000:3000"
+    depends_on:
+      - application
+    networks:
+      - infra_network
+
+
+networks:
+  infra_network:
+    external: true
